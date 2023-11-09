@@ -1,0 +1,1 @@
+g++ main.cpp cities.cpp -o main
