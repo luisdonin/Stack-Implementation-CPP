@@ -3,9 +3,7 @@
 #include <string>
 
 using namespace std;
-
-void push(stack<string>& cities, string currentCity);
-void check(stack<string> cities);
-void printGps(stack<string> cities);
-int leaveTown(stack<string>& cities);
-void setDestiny(stack<string>& cities);
+void menu(stack<string>& cidades);
+void push(stack<string>& cidades, string currentCity);
+void printGps(stack<string> cidades);
+int pop(stack<string>& cidades);

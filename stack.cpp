@@ -3,70 +3,34 @@
 #include <iostream>
 using namespace std;
 
-void push(stack<string>& cities, string currentCity){
-    cities.push(currentCity);
+void push(stack<string>& cidades, string cidadeAtual){
+    cidades.push(cidadeAtual);
 }
 
+void printGps(stack<string> cidades) {
+    stack<string> pilhaTemp;
 
-void check(stack<string> cities){
-  if(cities.empty()){
-    cout << "Empty Stack" << endl;
-  }else{
-    while(!cities.empty()){
-       printf(" %s -> ", cities.top().c_str());
-      cities.pop();
-    }
-    printf("\n");
-    //cout << cities.top() << endl;
-  }
-   
-
-}
-void printGps(stack<string> cities) {
-    stack<string> tempStack;
-
-    while (!cities.empty()) {
-        tempStack.push(cities.top());
-        cities.pop();
+    while (!cidades.empty()) {
+        pilhaTemp.push(cidades.top());
+        cidades.pop();
     }
 
-    while (!tempStack.empty()) {
-        printf("%s ", tempStack.top().c_str());
-        tempStack.pop();
-        if(!tempStack.empty()){
+    while (!pilhaTemp.empty()) {
+        printf("%s ", pilhaTemp.top().c_str());
+        pilhaTemp.pop();
+        if(!pilhaTemp.empty()){
             printf("-> ");
         }else
-        if(tempStack.empty()){
+        if(pilhaTemp.empty()){
             printf("\n");
         }
     }
 }
 
-int leaveTown(stack<string>& cities){
-    if(cities.empty()){
-        cout << "All cities were visited!" << endl;
-        exit(0);
-    }else{
-        printf("%s", cities.top().c_str());
-        cities.pop();
-        if(cities.empty()){
-            printf("\n");
-        }else
-        if(!cities.empty()){
-            printf("-> %s\n", cities.top().c_str());
-        }
-    }
+int pop(stack<string>& cidades){
+   
+    cidades.pop(); 
+   
     return 0;
-}
-void setDestiny(stack<string>& cities){
-    string path;
-    cout << "Path (! to finish setting path) " << endl;
-    while(path != "!"){
-        cout << "Add town: ";
-        cin >> path;
-        if(path != "f"){
-            push(cities,path);
-        }
-    }
 }
 

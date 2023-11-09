@@ -1,1 +1,1 @@
-g++ main.cpp cities.cpp -o main
+clear && g++ main.cpp stack.cpp menu.cpp -o main && ./main
